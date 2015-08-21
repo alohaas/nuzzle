@@ -45,7 +45,7 @@ Puzzle.prototype = {
     this.styles.font = this.styles.fontSize + "px " + this.styles.fontFamily;
     this.styles.fontLarge = this.styles.fontSize*2 + "px " + this.styles.fontFamily;
   },
-
+  // Fisher–Yates shuffle: http://sedition.com/perl/javascript-fy.html
   shuffle: function(arr) {
     var currentIndex = arr.length, temporaryValue, randomIndex ;
     while (0 !== currentIndex) {
