@@ -1,7 +1,14 @@
-function Puzzle() {
+function Puzzle(n) {
 
+  // new methods
+  // this.n = n || 4;
+  // this.r = new Array(this.n*this.n);
+  // this.gridOrigin = this.increment(this.r);
+
+  // old methods
   this.gridOrigin = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ];
   this.gridGame = this.shuffle(this.gridOrigin);
+  // this.test = this.newMatrix(this.n, this.gridGame);
   this.gridMoves = [
     [2, 5],      [1, 3, 6],      [2, 4, 7],       [3, 8],
     [1, 6, 9],   [2, 5, 7, 10],  [3, 6, 8, 11],   [4, 7, 12],
@@ -23,9 +30,27 @@ function Puzzle() {
   this.restart();
   this.canvas.addEventListener("mousedown", this.updatePuzzle.bind(this), true);
 
+
 };
 
 Puzzle.prototype = {
+  // method to renadomize array
+  // increment: function(arr) {
+  //   for (var i = 0; i < arr.length; i++) {
+  //     arr[i] = i+1;
+  //   }
+  //   return arr;
+  // },
+  //
+  // newMatrix: function(dim, arr) {
+  //   var a = new Array(dim);
+  //   for (var i = 0; i < a.length; i++) {
+  //     for (var j = 0; j < a.length; j++) {
+  //       a[i][j] = arr[dim*i + j];
+  //     }
+  //   }
+  //   return a;
+  // },
 
   drawCanvas: function() {
     var canvas = this.canvas;
